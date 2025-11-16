@@ -11,8 +11,8 @@
 #include <ArduinoJson.h>
 
 // Configurações da rede WiFi à se conectar
-const char* ssid = "Clovis 2.4G";
-const char* password = "99143304";
+const char* ssid = "";
+const char* password = "";
 
 String payload;
 HTTPClient http; // o objeto da classe HTTPClient
@@ -51,7 +51,7 @@ void setup() {
     ESP.restart();
   }
 
-  http.begin("https://api.timezonedb.com/v2.1/get-time-zone?key=FT1D0SUXOE5Z&format=json&by=zone&zone=America/Recife"); // configura o URL para fazer requisição no servidor
+  http.begin("https://api.timezonedb.com/v2.1/get-time-zone?key=YourKeyHere&format=json&by=zone&zone=America/Recife"); // configura o URL para fazer requisição no servidor
   digitalWrite(enables, HIGH);
   delay(1000);
   digitalWrite(enables, LOW);
