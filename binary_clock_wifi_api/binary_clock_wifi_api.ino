@@ -65,25 +65,6 @@ void loop() {
 
     oldtime = millis();
 
-    /*//Serial.println("[HTTP] GET...");
-    int httpCode = http.GET(); // inicia uma conexão e envia um cabeçalho HTTP para o
-    //                              URL do servidor configurado
-    //Serial.print("[HTTP] GET... código: ");
-    //Serial.println(httpCode);
-    if (httpCode == HTTP_CODE_OK) // se o cabeçalho HTTP foi enviado e o cabeçalho de
-      //                               resposta do servidor foi tratado, ...
-    {
-      //Serial.println("[HTTP] GET... OK! Resposta: ");
-
-      payload = http.getString(); // armazena a resposta da requisição
-      //Serial.println(payload); // imprime a resposta da requisição
-    } else // se não, ...
-    {
-      //Serial.print("HTTP GET... Erro. Mensagem de Erro: ");
-      //Serial.println(http.errorToString(httpCode).c_str()); // Imprime a mensagem de erro da requisição
-    }
-
-    http.end();// Fecha a requisição HTTP*/
     JsonDocument remotedata;
     updateTimeFromAPI();
   
@@ -120,40 +101,7 @@ void loop() {
          
   }
   refreshLeds();
-  /*if(hour != previoushour){
-    previoushour= hour;
-    //digitalWrite(enables, HIGH);
-    for(int i=0; i < 5; i++){
-   
-      if(bitRead((hour+32), i) == 1){
-      
-        turnledon(i+6);
-        //Serial.print("hour ");      
-        //Serial.println(i+6);
-      }
-      
-    }
-    //digitalWrite(enables, LOW);
-    status= "hour";
-  }
-  
-  if(minute != previousminute){
-    previousminute= minute;
-    //digitalWrite(enables, HIGH);
-    for(int j=0; j < 6; j++){
-   
-      if(bitRead(minute, j) == 1){
-      
-        turnledon(j);
-        //Serial.print("minute ");      
-        //Serial.println(j);
-      }
     
-    }
-    //digitalWrite(enables, LOW);
-    status= "minute";
-  }*/
-  
 }
 
 
